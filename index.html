@@ -2,48 +2,27 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistem Monitor Absen Guru MBS</title>
-
-    <!-- ICON APP (iPhone, Android, browser) -->
-    <link rel="icon" type="image/png" sizes="32x32" href="icons/monitor-32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="icons/monitor-192.png">
-    <link rel="shortcut icon" href="icons/monitor.ico">
-    <link rel="apple-touch-icon" href="icons/monitor-180.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="icons/monitor-152.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="icons/monitor-167.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="icons/monitor-180.png">
-    <link rel="manifest" href="manifest.webmanifest">
-    <meta name="theme-color" content="#14805f">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Monitor Absen">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- Auto redirect instan via Meta Refresh -->
+    <meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/AKfycbwY3KF7A166kMkRCmvI8TkuggzgbVvLpBaA18jDr2x-aWGtf213iIIGq-MHYQz-BxW3wA/exec">
+    
+    <script>
+        // Auto redirect backup via JavaScript
+        window.location.replace("https://script.google.com/macros/s/AKfycbwY3KF7A166kMkRCmvI8TkuggzgbVvLpBaA18jDr2x-aWGtf213iIIGq-MHYQz-BxW3wA/exec");
+    </script>
 
     <style>
-        html, body { margin: 0; height: 100%; background: #002B66; }
         body {
+            background-color: #002B66;
             color: #FFFFFF;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-        /* Dashboard Apps Script tampil layar penuh */
-        #app {
-            position: fixed;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-            background: #FFFFFF;
-            visibility: hidden;
-        }
-        /* Loading di belakang iframe, terlihat sebelum dashboard siap */
-        #loading {
-            position: fixed;
-            inset: 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            margin: 0;
             text-align: center;
         }
         .loader {
@@ -55,42 +34,25 @@
             animation: spin 1s linear infinite;
             margin-bottom: 20px;
         }
-        @keyframes spin { to { transform: rotate(360deg); } }
-        h2 { font-size: 20px; font-weight: 600; margin: 0 0 8px 0; }
-        p { font-size: 14px; color: #93C5FD; margin: 0; }
-        a { color: #FFFFFF; font-weight: 600; }
-        #fallback { display: none; margin-top: 16px; }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+        }
+        p {
+            font-size: 14px;
+            color: #93C5FD;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
-    <div id="loading">
-        <div class="loader"></div>
-        <h2>Membuka Dashboard Monitor...</h2>
-        <p>Mohon tunggu sebentar</p>
-        <p id="fallback">Tidak terbuka? <a id="direct" href="#">Buka langsung di sini</a></p>
-    </div>
-
-    <iframe id="app" title="Monitor Absen Guru MBS" allow="fullscreen"></iframe>
-
-    <script>
-        var URL_APP = "https://script.google.com/macros/s/AKfycbwY3KF7A166kMkRCmvI8TkuggzgbVvLpBaA18jDr2x-aWGtf213iIIGq-MHYQz-BxW3wA/exec";
-
-        var frame = document.getElementById("app");
-        frame.addEventListener("load", function () {
-            frame.style.visibility = "visible";
-            document.getElementById("loading").style.display = "none";
-        });
-        frame.src = URL_APP;
-        document.getElementById("direct").href = URL_APP;
-
-        // Kalau dashboard tidak bisa tampil di dalam iframe, munculkan link langsung
-        setTimeout(function () {
-            document.getElementById("fallback").style.display = "block";
-        }, 8000);
-    </script>
-
-    <noscript>
-        <meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/AKfycbwY3KF7A166kMkRCmvI8TkuggzgbVvLpBaA18jDr2x-aWGtf213iIIGq-MHYQz-BxW3wA/exec">
-    </noscript>
+    <div class="loader"></div>
+    <h2>Mengalihkan ke Dashboard Monitor...</h2>
+    <p>Mohon tunggu sebentar</p>
 </body>
 </html>
